@@ -16,7 +16,6 @@ import 'react-dates/lib/css/_datepicker.css';
 import './firebase/firebase';
 
 const store = configureStore();
-
 const jsx = (
 	// Provider permet de donner accès au store à tous les components
 	<Provider store={store}> 
