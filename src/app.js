@@ -17,23 +17,6 @@ import './firebase/firebase';
 
 const store = configureStore();
 
-//pour écouter toutes les modif et automatiser une action a chaque changement
-/*store.subscribe(()=> {
-	console.log('coco');
-});*/
-
-store.dispatch(addExpense({description: 'Water bill', amount: 100, createdAt: 100 }));
-store.dispatch(addExpense({description: 'Rent ', amount: 300, createdAt: 200}));
-store.dispatch(addExpense({description: 'Gas bill', amount: 200, createdAt: 300}));
-//store.dispatch(setTextFilter(''));
-
-/*setTimeout (() => {
-	store.dispatch(setTextFilter(''));
-}, 3000)
-*/
-const state = store.getState();
-const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
-
 const jsx = (
 	// Provider permet de donner accès au store à tous les components
 	<Provider store={store}> 
