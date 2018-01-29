@@ -17,7 +17,7 @@ exports[`should render EditExpensePage correctly 1`] = `
   <button
     onClick={[Function]}
   >
-     Remove
+    Remove
   </button>
 </div>
 `;
