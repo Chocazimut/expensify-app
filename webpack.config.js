@@ -11,7 +11,7 @@ module.exports = (env) => {
 		//
 		output: {
 			//et où sont les fichiers finaux, traduits pour le browser
-			path: path.join(__dirname, 'public'),
+			path: path.join(__dirname, 'public', 'dist'),
 			filename: 'bundle.js'
 		},
 		module: {
@@ -69,6 +69,7 @@ module.exports = (env) => {
 			contentBase: path.join(__dirname, 'public'),
 			//history fait que toutes les routes coté client renvoient vers l'index.html
 			historyApiFallback: true,
+			publicPath: '/dist/'
 		}
 	};
 }; 
