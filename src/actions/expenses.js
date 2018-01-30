@@ -34,6 +34,7 @@ export const removeExpense = ({id} = {}) => ({
 });
 
 export const startRemoveExpense = ({id} = {}) => {
+	//redux, doit recevoir dispatch pour pouvoir appeller la fonction ensuite
 	return(dispatch) => { 
 		return db.ref(`expenses/${id}`).remove().then(()=> {
 			dispatch(removeExpense({ id }));
@@ -47,6 +48,15 @@ export const editExpense = (id, updates) => ({
 	id, 
 	updates,
 });
+
+
+export const startEditExpense = (id, updates) => {
+	return(dispatch) => {
+		return db.ref(`expenses/${id}`).update(updates).then(() => {
+			dispatch(editExpense(id, updates));
+		});
+	};
+};
 
 //SET EXPENSES
 export const setExpenses = (expenses) => ({
