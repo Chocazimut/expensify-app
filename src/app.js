@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import AppRouter from './routers/AppRouter';
 import configureStore from './store/configureStore';
 import getVisibleExpenses from './selectors/expenses';
-import { addExpense, removeExpense, editExpense } from './actions/expenses';
+import { startSetExpenses, removeExpense, editExpense } from './actions/expenses';
 import { setTextFilter, sortByDate , sortByAmount, setStartDate, setEndDate } from './actions/filters';
 //normalize : import de la librairie normalize qui pose un default stylesheet 
 //Avant toute modification css, comme ça même base interprétée par 
@@ -25,5 +25,10 @@ const jsx = (
 );
 
 //Affiche dans le DOM le parent qui lui meme affiche les enfants.
-ReactDOM.render(jsx, document.getElementById('app'));
+ReactDOM.render(<p>loading...</p>, document.getElementById('app'));
+
+store.dispatch(startSetExpenses()).then(() => {
+	ReactDOM.render(jsx, document.getElementById('app'));
+});
+
 
