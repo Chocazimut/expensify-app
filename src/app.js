@@ -14,6 +14,7 @@ import './styles/styles.scss';
 //css lié aux calendriers indispensables pr la vue du calendar
 import 'react-dates/lib/css/_datepicker.css';
 import './firebase/firebase';
+//import './playground/promises';
 
 const store = configureStore();
 const jsx = (

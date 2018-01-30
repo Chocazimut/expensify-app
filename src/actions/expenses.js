@@ -1,32 +1,15 @@
 import uuid from 'uuid';
-//import db from '../firebase/firebase';
+import db from '../firebase/firebase';
 
 //ADD EXPENSE
 
-const addExpense = (
-{
-	description = '', 
-	note = '', 
-	amount = 0, 
-	createdAt = 0 
-} = {}
-) => ({	
-	type: 'ADD_EXPENSE',
-	expense: {
-		id: uuid(),
-		description,
-		note,
-		amount,
-		createdAt
-	}
-});
-
-/*const addExpense = (expense) =>({
+const addExpense = (expense) =>({
 	type: 'ADD_EXPENSE',
 	expense
-});*/
+});
 
-/*export const startAddExpense = (expenseData = {}) => {
+export const startAddExpense = (expenseData = {}) => {
+	//cette fonction est utilisée via reduc donc dispatch
 	return (dispatch) => {
 		const {
 			description = '', 
@@ -35,14 +18,15 @@ const addExpense = (
 			createdAt = 0 
 		} = expenseData;
 		const expense = { description, note, amount, createdAt };
-		db.ref('expense').push(expense).then((ref) => {
+		
+		return db.ref('expenses').push(expense).then((ref) => {
 			dispatch(addExpense({
 				id: ref.key,
 				...expense
 			}));
 		});
 	};
-};*/
+};
 
 //REMOVE EXPENSE
 const removeExpense = ({id} = {}) => ({

@@ -3,7 +3,10 @@ import expensesReducer from '../reducers/expenses';
 import filtersReducer from '../reducers/filters';
 import thunk from 'redux-thunk';
 
+//lance dev tool, si pas de devtool, lance compose
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+
 // STORE CREATION *********************************
 
 export default () => {
