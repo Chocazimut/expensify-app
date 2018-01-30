@@ -2,8 +2,7 @@ import uuid from 'uuid';
 import db from '../firebase/firebase';
 
 //ADD EXPENSE
-
-const addExpense = (expense) =>({
+export const addExpense = (expense) =>({
 	type: 'ADD_EXPENSE',
 	expense
 });
@@ -29,17 +28,16 @@ export const startAddExpense = (expenseData = {}) => {
 };
 
 //REMOVE EXPENSE
-const removeExpense = ({id} = {}) => ({
+export const removeExpense = ({id} = {}) => ({
 	type: 'REMOVE_EXPENSE',
 	id
 });
 
 //EDIT EXPENSE
 
-const editExpense = (id, updates) => ({
+export const editExpense = (id, updates) => ({
 	type: 'EDIT_EXPENSE',
 	id, 
 	updates,
 });
 
-export { addExpense, removeExpense, editExpense };
