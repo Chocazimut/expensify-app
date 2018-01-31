@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render Herder renderer 1`] = `
+exports[`should render Header renderer 1`] = `
 <header>
   <h1>
     Expensify
@@ -20,5 +20,10 @@ exports[`should render Herder renderer 1`] = `
   >
     CREATE EXPENSE 
   </NavLink>
+  <button
+    onClick={[Function]}
+  >
+    Logout
+  </button>
 </header>
 `;

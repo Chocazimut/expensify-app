@@ -1,5 +1,6 @@
 import * as firebase from 'firebase';
 
+
 // Initialize Firebase
 const config = {
     apiKey: process.env.FIREBASE_API_KEY,
@@ -14,7 +15,9 @@ firebase.initializeApp(config);
 
 const db = firebase.database();
 
-export { firebase, db as default };
+const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+
+export { firebase, googleAuthProvider, db as default };
 
 
 //avec once on peut utiliser les promesses avec then et catch
