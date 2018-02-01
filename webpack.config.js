@@ -16,7 +16,7 @@ module.exports = (env) => {
 
 	return {
 		//dit ou webpack doit commencer pour lancer l'application
-		entry: './src/app.js',
+		entry: ['babel-polyfill', './src/app.js'],
 		//
 		output: {
 			//et où sont les fichiers finaux, traduits pour le browser
